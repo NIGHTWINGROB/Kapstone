@@ -10,13 +10,6 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app.sqlite')
     db = SQLAlchemy(app)
     ma = Marshmallow(app)
-    
-    from .views import views
-    from .auth import auth
-    
-    app.register_blueprint(views, url_prefix='/')
-    app.register_blueprint(auth, url_prefix='/')
-
 
     # Posts class
 
