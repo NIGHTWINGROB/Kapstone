@@ -1,53 +1,52 @@
-import React, { useState, useEffect } from "react"
 import { Container, Row, Col, Tab } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+import { QuoteCard } from "./QuoteCard";
 import projImg1 from "../assets/img/project-img1.jpg";
 import projImg2 from "../assets/img/project-img2.jpg";
 import projImg3 from "../assets/img/project-img.jpg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
-export const Projects = () => {
+export const Quotes = () => {
 
-  const projects = [
+  const quotes = [
     {
-      title: "Authur",
-      description: "Quote",
+      Author: "Authur",
+      Quote: "Quote",
       imgUrl: projImg1,
     },
     {
-      title: "Author",
-      description: "Quote",
+      Author: "Author",
+      Quote: "Quote",
       imgUrl: projImg2,
     },
     {
-      title: "Author",
-      description: "Quote",
+      Author: "Author",
+      Quote: "Quote",
       imgUrl: projImg3,
     },
 
   ];
 
   return (
-    <section className="project" id="project">
+    <section className="quotes" id="quotes">
       <Container>
         <Row>
           <Col size={12}>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
+                <h2>Quotes</h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                <Tab.Container id="quote-tabs" defaultActiveKey="first">
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
                         {
-                          projects.map((project, index) => {
+                          quotes.map((quotes, index) => {
                             return (
-                              <ProjectCard
+                              <QuoteCard
                                 key={index}
-                                {...project}
+                                {...quotes}
                                 />
                             )
                           })
